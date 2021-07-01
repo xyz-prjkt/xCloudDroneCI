@@ -5,12 +5,20 @@ steps:
  - name: LLVM-tc Compilation
    image: clangbuiltlinux/ubuntu:latest
    environment:
-     TG_CHAT_ID:
-       from_secret: TG_CHAT_ID
+     LLVM_NAME:
+       from_secret: LLVM_NAME
      TG_TOKEN:
        from_secret: TG_TOKEN
+     TG_CHAT_ID:
+       from_secret: TG_CHAT_ID
+     GH_USERNAME:
+       from_secret: GH_USERNAME
+     GH_EMAIL:
+       from_secret: GH_EMAIL
      GH_TOKEN:
        from_secret: GH_TOKEN
+     GH_PUSH_REPO_URL:
+       from_secret: GH_PUSH_REPO_URL
    commands:
       - apt update -y && apt install -y --no-install-recommends cmake ninja-build python3-pip libffi-dev python3-dev
       - bash llvm-tc_build.sh
