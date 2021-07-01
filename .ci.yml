@@ -1,0 +1,16 @@
+kind: pipeline
+name : xChain Toolchain Compiler
+version: rev1.5
+steps:
+ - name: xRage-tc Compilation
+   image: clangbuiltlinux/ubuntu:latest
+   environment:
+     TG_CHAT_ID:
+       from_secret: TG_CHAT_ID
+     TG_TOKEN:
+       from_secret: TG_TOKEN
+     GH_TOKEN:
+       from_secret: GH_TOKEN
+   commands:
+      - apt update -y && apt install -y --no-install-recommends cmake ninja-build python3-pip libffi-dev python3-dev
+      - bash xchain-tc_build.sh
