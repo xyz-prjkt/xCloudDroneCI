@@ -1,8 +1,8 @@
 kind: pipeline
-name : xChain Toolchain Compiler
-version: rev1.5
+name : LLVM Toolchain Compiler
+version: rev1.5_template
 steps:
- - name: xRage-tc Compilation
+ - name: LLVM-tc Compilation
    image: clangbuiltlinux/ubuntu:latest
    environment:
      TG_CHAT_ID:
@@ -13,4 +13,4 @@ steps:
        from_secret: GH_TOKEN
    commands:
       - apt update -y && apt install -y --no-install-recommends cmake ninja-build python3-pip libffi-dev python3-dev
-      - bash xchain-tc_build.sh
+      - bash llvm-tc_build.sh

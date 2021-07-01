@@ -23,6 +23,7 @@ apt-get install -y --no-install-recommends \
         zlib1g-dev \
         python3
 
+# Use xRageTC build script as LLVM Build Script.
 git clone https://github.com/xyz-prjkt/xRageChain-tc $(pwd)/xrage-tc
 cd $(pwd)/xrage-tc
 bash build-tc.sh
