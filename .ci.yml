@@ -3,7 +3,7 @@ name : LLVM Toolchain Compiler
 version: rev1.5_template
 steps:
  - name: LLVM-tc Compilation
-   image: clangbuiltlinux/ubuntu:latest
+   image: xyzuan/xdocker:latest
    environment:
      LLVM_NAME:
        from_secret: LLVM_NAME
