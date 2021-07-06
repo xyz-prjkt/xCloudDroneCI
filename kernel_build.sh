@@ -9,6 +9,8 @@
 # KERNEL_BRANCH  | Your needed kernel branch if needed with -b. eg -b eleven_eas
 # DEVICE_CODENAME | Your device codename
 # DEVICE_DEFCONFIG | Your device defconfig eg. lavender_defconfig
+# TG_TOKEN | Your telegram bot token
+# TG_CHAT_ID | Your telegram private ci chat id
 # BUILD_USER | Your username
 # BUILD_HOST | Your hostname
 
