@@ -9,6 +9,7 @@
 # KERNEL_BRANCH  | Your needed kernel branch if needed with -b. eg -b eleven_eas
 # DEVICE_CODENAME | Your device codename
 # DEVICE_DEFCONFIG | Your device defconfig eg. lavender_defconfig
+# ANYKERNEL | Your Anykernel link repository
 # TG_TOKEN | Your telegram bot token
 # TG_CHAT_ID | Your telegram private ci chat id
 # BUILD_USER | Your username
@@ -65,6 +66,7 @@ tg_post_msg() {
 tg_post_msg "<b>xKernelCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
 
 # Compile
+compile(){
 tg_post_msg "<b>xKernelCompiler:</b><code>Compilation has started"
 cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
@@ -82,7 +84,7 @@ make -j$(nproc) ARCH=arm64 O=out \
 	finerr
 	exit 1
    fi
-  
+
   git clone --depth=1 $ANYKERNEL AnyKernel
 	cp $IMAGE AnyKernel
 }
