@@ -72,8 +72,8 @@ cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
 make -j$(nproc) ARCH=arm64 O=out \
     LD=${GCC64_ROOTDIR}/bin/ld.lld \
-    CROSS_COMPILE=${GCC64_ROOTDIR}/bin/aarch64-linux-gnu- \
-    CROSS_COMPILE_ARM32=${GCC32_ROOTDIR}/bin/arm-linux-gnueabi-
+    CROSS_COMPILE=${GCC64_ROOTDIR}/bin/aarch64-elf- \
+    CROSS_COMPILE_ARM32=${GCC32_ROOTDIR}/bin/arm-eabi-
 
    if ! [ -a "$IMAGE" ]; then
 	finerr
